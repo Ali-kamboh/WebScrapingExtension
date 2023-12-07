@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Scraping Extension</title>
+    <script src="popup.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      body {
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+
+      #scrapeButton {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      #status {
+        margin-top: 20px;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Web Scraping Extension</h1>
+      <div class="form-group">
+        <label for="url">URL:</label>
+        <input type="text" id="url" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="dataTypes">Data Types:</label>
+        <div class="form-check">
+          <input type="checkbox" id="names" class="form-check-input" />
+          <label for="names" class="form-check-label">Names</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="phoneNumbers" class="form-check-input" />
+          <label for="phoneNumbers" class="form-check-label">Phone Numbers</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="emails" class="form-check-input" />
+          <label for="emails" class="form-check-label">Emails</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="maxPages">Max Pages (5-100):</label>
+        <input type="number" id="maxPages" min="5" max="100" class="form-control" />
+      </div>
+      <button id="scrapeButton" class="btn btn-primary">Scrape</button>
+      <div id="status"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

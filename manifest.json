@@ -1,0 +1,39 @@
+{
+    "manifest_version": 2,
+    "name": "Web Scraping Extension",
+    "version": "1.0",
+    "description": "A Chrome extension for web scraping and data extraction.",
+    "permissions": [
+        "activeTab",
+        "storage",
+        "https://www.googleapis.com/*",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "browser_action": {
+      "default_popup": "popup.html"
+    },
+    "background": {
+      "scripts": [
+        "background.js"
+      ],
+      "persistent": false
+    },
+    "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["contentScript.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["popup.html"],
+        "matches": ["http://*/*", "https://*/*"]
+      }
+    ]
+  }
